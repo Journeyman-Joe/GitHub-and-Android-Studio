@@ -128,8 +128,8 @@ Do this:
 git clone https://ghp_PersonalAccessTokenForAnArbitraryxyz@github.com/xenon-ftc/Ultimate-Goal.git
 ```
 
-From inside the newly-created project folder, you can confirm that the PAT is now part of the project with:
-`git remote -v` Which will show something like:
+From inside the newly-created project folder, you can confirm that the PAT is now part of the project with
+`git remote -v`, which will show something like:
 
 ```
 origin  https://ghp_PersonalAccessTokenForAnArbitraryxyz@github.com/xenon-ftc/Ultimate-Goal.git (fetch)
