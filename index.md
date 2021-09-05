@@ -63,8 +63,7 @@ Log in to the account, and open the menu from the profile icon at the top right 
 Select “Settings” (2).
 From the menu on the left, near the bottom, select “Developer settings” (3).
 
-# First two pictures go here
-`[Link](url) and ![Image](src)`
+![Navigating GitHub](GitHub_Nav_1.png)
 
 On the GitHub Apps page, select “Personal access tokens”.
 This next page will list all of the PATs for the account, by the name or comment entered when each was created.
