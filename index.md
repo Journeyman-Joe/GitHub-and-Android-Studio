@@ -84,7 +84,7 @@ Scroll down, and click the green “Create token” button when you are done.
 ### Credential Formats, and Using the PAT
 
 A simple GitHub remote repository credential is just the complete URL.
-For team Xenon, with a GitHub account xenon-ftc, their Ultimate Goal repository URL might be:
+For team _Xenon_, with a GitHub account xenon-ftc, their Ultimate Goal repository URL might be:
 
 `https://github.com/xenon-ftc/Ultimate-Goal.git`
 
@@ -122,6 +122,36 @@ That’s all there is to it.  You can start Android Studio, open the Ultimate-Go
 and Android Studio will be able to Update and Push code to GitHub without further Account Name or Password prompts.
 All of the authentication is in the PAT.
 
+### Scripting
+
+If you're supporting a pool of shared programmers' computers, automating your installations will be a real labor-saver.
+For example, suppose you want to clone the Ultimate Goal and Skystone repositories for three sister teams,
+_xenon_, _radon_, and _argon_,
+on a bunch of new laptops.
+Your script (a Windows Command Prompt .BAT file) might look like this:
+
+```
+C:
+cd android-workspace
+mkdir xenon
+mkdir radon
+mkdir argon
+
+cd xenon
+git clone https://ghp_SharedTeamabcdTokenForTeamXenonefgyz@github.com/xenon-ftc/Ultimate-Goal.git
+git clone https://ghp_SharedTeamabcdTokenForTeamXenonefgyz@github.com/xenon-ftc/Skystone.git
+cd ..
+cd radon
+git clone https://ghp_SharedTeamabcdTokenForTeamRadonefgyz@github.com/radon-ftc/Ultimate-Goal.git
+git clone https://ghp_SharedTeamabcdTokenForTeamRadonefgyz@github.com/radon-ftc/Skystone.git
+cd ..
+cd argon
+git clone https://ghp_SharedTeamabcdTokenForTeamArgonefgyz@github.com/argon-ftc/Ultimate-Goal.git
+git clone https://ghp_SharedTeamabcdTokenForTeamArgonefgyz@github.com/argon-ftc/Skystone.git
+cd ..
+```
+
+Load it on a flash drive, start it on each new laptop, and drink coffee while it runs.
 
 ### Working with an Existing Project
 
