@@ -126,7 +126,7 @@ All of the authentication is in the PAT.
 
 ### Working with an Existing Project
 
-If you already have an Android Studio project and want to add a PAT to the credentials:
+If you already have an Android Studio project installed on a computer and want to add a PAT to the credentials:
 The sure-fire way to make it work is to delete the old project folder, and clone a new project folder, using the procedure above.
 
 **precaution:**  Please make sure that Android Studio does not have the project open when you delete and re-clone.
