@@ -138,7 +138,7 @@ You can update the remote references to save that work, but it requires a little
 
 ```
 git remote rename origin origin_old
-git remote add origin `https://ghp_PersonalAccessTokenForAnArbitraryxyz@github.com/xenon-ftc/Ultimate-Goal.git`
+git remote add origin https://ghp_PersonalAccessTokenForAnArbitraryxyz@github.com/xenon-ftc/Ultimate-Goal.git
 git remote remove origin_old
 git push
 ```
@@ -170,7 +170,7 @@ Contents will be something like this:
 [branch "GlobalClass61"]
         remote = origin
         merge = refs/heads/GlobalClass61
-        ```
+```
 
 Find the url line, and paste in your PAT:
 
@@ -181,7 +181,7 @@ Find the url line, and paste in your PAT:
         bare = false
         logallrefupdates = true
 [remote "origin"]
-        url = `https://ghp_PersonalAccessTokenForAnArbitraryxyz@github.com/xenon-ftc/Ultimate-Goal.git`
+        url = https://ghp_PersonalAccessTokenForAnArbitraryxyz@github.com/xenon-ftc/Ultimate-Goal.git
         fetch = +refs/heads/*:refs/remotes/origin/*
 [branch "main"]
         remote = origin
