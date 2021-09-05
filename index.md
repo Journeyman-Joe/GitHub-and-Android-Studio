@@ -112,12 +112,12 @@ Do this:
 (All on one line.)
 
 From inside the newly-created project folder, you can confirm that the PAT is now part of the project with:
-`git remote -v`
+`git remote -v` Which will show something like:
 
-Which will show something like:
-
-```origin  https://ghp_PersonalAccessTokenForAnArbitraryxyz@github.com/xenon-ftc/Ultimate-Goal.git (fetch)
-origin  https://ghp_PersonalAccessTokenForAnArbitraryxyz@github.com/xenon-ftc/Ultimate-Goal.git (push)```
+```
+origin  https://ghp_PersonalAccessTokenForAnArbitraryxyz@github.com/xenon-ftc/Ultimate-Goal.git (fetch)
+origin  https://ghp_PersonalAccessTokenForAnArbitraryxyz@github.com/xenon-ftc/Ultimate-Goal.git (push)
+```
 
 That’s all there is to it.  You can start Android Studio, open the Ultimate-Goal project,
 and Android Studio will be able to Update and Push code to GitHub without further Account Name or Password prompts.
@@ -136,10 +136,12 @@ You may find a situation where deleting the old content on the computer would re
 perhaps because somebody forgot to “Push” their work at the end of last season.
 You can update the remote references to save that work, but it requires a little more Git command line skill (example):
 
-```git remote rename origin origin_old
+```
+git remote rename origin origin_old
 git remote add origin `https://ghp_PersonalAccessTokenForAnArbitraryxyz@github.com/xenon-ftc/Ultimate-Goal.git`
 git remote remove origin_old
-git push```
+git push
+```
 
 The last command will fail because there’s no recorded upstream branch for the new remote repository.
 The error message will contain the text of the command you should run to fix that:
@@ -153,7 +155,8 @@ Make a backup copy!  Open it with a plain text editor, like Notepad:
 
 Contents will be something like this:
 
-```[core]
+```
+[core]
         repositoryformatversion = 0
         filemode = true
         bare = false
@@ -166,11 +169,13 @@ Contents will be something like this:
         merge = refs/heads/main
 [branch "GlobalClass61"]
         remote = origin
-        merge = refs/heads/GlobalClass61```
+        merge = refs/heads/GlobalClass61
+        ```
 
 Find the url line, and paste in your PAT:
 
-```[core]
+```
+[core]
         repositoryformatversion = 0
         filemode = true
         bare = false
@@ -183,7 +188,8 @@ Find the url line, and paste in your PAT:
         merge = refs/heads/main
 [branch "GlobalClass61"]
         remote = origin
-        merge = refs/heads/GlobalClass61```
+        merge = refs/heads/GlobalClass61
+```
 
 This is obviously a bit of a risk: these files are not meant to be edited by a human.
 But it should work, and may save you the trouble of fixing the upstream branch records if you have lots of branches.
