@@ -111,13 +111,15 @@ Note the “at” sign (“`@`”) between the PAT, and the rest of the URL.
 The easiest way to incorporate the PAT into a local Android Studio project is to do it while cloning the remote repository.
 Open a Command Prompt in your project’s parent directory of choice.  Instead of:
 
-`git clone https://github.com/xenon-ftc/Ultimate-Goal.git`
+```
+git clone https://github.com/xenon-ftc/Ultimate-Goal.git
+```
 
 Do this:
 
-`git clone https://ghp_PersonalAccessTokenForAnArbitraryxyz@github.com/xenon-ftc/Ultimate-Goal.git`
-
-(All on one line.)
+```
+git clone https://ghp_PersonalAccessTokenForAnArbitraryxyz@github.com/xenon-ftc/Ultimate-Goal.git
+```
 
 From inside the newly-created project folder, you can confirm that the PAT is now part of the project with:
 `git remote -v` Which will show something like:
