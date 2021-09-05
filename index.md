@@ -86,9 +86,10 @@ Scroll down, and click the green “Create token” button when you are done.
 Immediately copy the generated PAT, and paste it somewhere safe.
 You will not be able to recover the PAT from within GitHub after you navigate away from this page.
 Save your collection of PATs, along with any notes you may want to keep, somewhere appropriate for the level of security you need.
-(In case you were wondering, I deleted this particular demonstration PAT as soon as I took the screenshot.)
 
 ![Copy the PAT](CopyPAT.png)
+
+(In case you were wondering, I deleted this particular demonstration PAT as soon as I took the screenshot.)
 
 ### Credential Formats, and Using the PAT
 
