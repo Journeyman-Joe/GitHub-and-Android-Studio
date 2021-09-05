@@ -1,3 +1,6 @@
+---
+title: GitHub and Android Studio
+---
 ## Linking Android Studio and GitHub
 
 An FTC team that uses Android Studio for robot programming should also use cloud storage for backup, and to facilitate file sharing.
