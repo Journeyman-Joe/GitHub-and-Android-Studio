@@ -8,9 +8,9 @@ But you have to establish authentication credentials to connect an Android Studi
 Until recently, you could use the familiar Account Name and Account Password pair to authenticate.  But that’s no longer possible.
 To improve security, GitHub now requires a different method for computer applications to authenticate to their accounts.
 The easy-to-remember Name and Password is a thing of the past.
-(This change took effect on August 13, 2021.  Some returning FTC programmers are in for a surprise.)
+_(This change took effect on August 13, 2021.  Some returning FTC programmers are in for a surprise.)_
 
-Individual developers and programmers usually can manage their authentication needs with a Git Credentials Manager add-on program.
+Individual developers and programmers usually manage their authentication needs with a Git Credentials Manager add-on program.
 This may not work well for an FTC team, where several programmers may be using classroom computers,
 from a pool shared between teams, or their own personally-owned computers - or both.
 Many teams are part of a larger sponsoring organization, such as a school;
@@ -60,31 +60,31 @@ In summary, for each team’s GitHub account, there will be individual PATs for 
 
 You can create as many PATs as you need from the GitHub page for your team’s account.
 Log in to the account, and open the menu from the profile icon at the top right (1).
-Select “Settings” (2).
-From the menu on the left, near the bottom, select “Developer settings” (3).
+Select “_Settings_” (2).
+From the menu on the left, near the bottom, select “_Developer settings_” (3).
 
 ![Navigating GitHub](GitHub_Nav_1.png)
 
-On the GitHub Apps page, select “Personal access tokens”.
+On the GitHub Apps page, select “_Personal access tokens_”.
 This next page will list all of the PATs for the account, by the name or comment entered when each was created.
 You can delete tokens at will from here - for example, if a programmer has left the team, his / her token should be deleted.
-You can also edit access rights by clicking on the name / comment.  For now, click on “Generate new token”.
+You can also edit access rights by clicking on the name / comment.  For now, click on “_Generate new token_”.
 
-On the “New personal access token” page, enter a descriptive note for this PAT (4).
+On the “_New personal access token_” page, enter a descriptive note for this PAT (4).
 For example, a team programmer’s first name, last initial, and team number.
-Select an expiration date, or “No expiration” (5).  For “Select scopes”, click “repo” (6), which will populate the entire repository block.
+Select an expiration date, or “_No expiration_” (5).  For “_Select scopes_”, click “_repo_” (6), which will populate the entire repository block.
 (That’s probably all of the scope a typical FTC programmer will ever need.)
 
 ![Create a PAT](CreatePAT.png)
 
-A note on expiration dates: GitHub presents you with a few options, including a custom date, and “No expiration”.
-GitHub will warn you about selecting “No expiration”.
+A note on expiration dates: GitHub presents you with a few options, including a custom date, and “_No expiration_”.
+GitHub will warn you about selecting “_No expiration_”.
 We don’t see it as that much of a problem, given the relatively small number of PATs you’ll need, and the ease of tracking.  Your choice.
 
-Scroll down, and click the green “Create token” button when you are done.
+Scroll down, and click the green “_Create token_” button when you are done.
 
 Immediately copy the generated PAT, and paste it somewhere safe.
-You will not be able to recover the PAT from within GitHub after you navigate away from this page.
+_You will not be able to recover the PAT from within GitHub after you navigate away from this page._
 Save your collection of PATs, along with any notes you may want to keep, somewhere appropriate for the level of security you need.
 
 ![Copy the PAT](CopyPAT.png)
@@ -96,16 +96,22 @@ Save your collection of PATs, along with any notes you may want to keep, somewhe
 A simple GitHub remote repository credential is just the complete URL.
 For team _Xenon_, with a GitHub account xenon-ftc, their Ultimate Goal repository URL might be:
 
-`https://github.com/xenon-ftc/Ultimate-Goal.git`
+```
+https://github.com/xenon-ftc/Ultimate-Goal.git
+```
 
 With the sample PAT (above), the credential with authentication token might be:
 
-`https://ghp_PersonalAccessTokenForAnArbitraryxyz@github.com/xenon-ftc/Ultimate-Goal.git`
+```
+https://ghp_PersonalAccessTokenForAnArbitraryxyz@github.com/xenon-ftc/Ultimate-Goal.git
+```
 
 Note the “at” sign (“`@`”) between the PAT, and the rest of the URL.
 (For the record: if Account Name / Password authentication were still accepted, the format would have a colon separating the Account Name and the Password:)
 
-`https://AccountName:Password@github.com/xenon-ftc/Ultimate-Goal.git`
+```
+https://AccountName:Password@github.com/xenon-ftc/Ultimate-Goal.git
+```
 
 ### Cloning with a PAT
 
@@ -170,11 +176,11 @@ Load it on a flash drive, start it on each new laptop, and drink coffee while it
 If you already have an Android Studio project installed on a computer and want to add a PAT to the credentials:
 The sure-fire way to make it work is to delete the old project folder, and clone a new project folder, using the procedure above.
 
-**precaution:**  Please make sure that Android Studio does not have the project open when you delete and re-clone.
+**Precaution:**  Please make sure that Android Studio does not have the project open when you delete and re-clone.
 Use `File | Close Project` in Android studio to avoid conflicts.
 
 You may find a situation where deleting the old content on the computer would result in loss of work,
-perhaps because somebody forgot to “Push” their work at the end of last season.
+perhaps because somebody forgot to “_Push_” their work at the end of last season.
 You can update the remote references to save that work, but it requires a little more Git command line skill (example):
 
 ```
@@ -189,7 +195,7 @@ The error message will contain the text of the command you should run to fix tha
 copy it out of the message, and paste it back at the prompt to run it.
 
 Or, at your own risk, you could edit the configuration file directly.
-From a Command Prompt in your project folder, cd .git (that’s “dot git”, not “git:) to find the git local configuration file, config.
+From a Command Prompt in your project folder, cd .git (that’s “dot git”, not “git") to find the git local configuration file, config.
 Make a backup copy!  Open it with a plain text editor, like Notepad:
 
 `notepad config`
@@ -213,7 +219,7 @@ Contents will be something like this:
         merge = refs/heads/GlobalClass61
 ```
 
-Find the url line, and paste in your PAT:
+Find the `url` line, and paste in your PAT:
 
 ```
 [core]
