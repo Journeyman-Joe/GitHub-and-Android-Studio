@@ -75,11 +75,20 @@ For example, a team programmer’s first name, last initial, and team number.
 Select an expiration date, or “No expiration” (5).  For “Select scopes”, click “repo” (6), which will populate the entire repository block.
 (That’s probably all of the scope a typical FTC programmer will ever need.)
 
+![Create a PAT](CreatePAT.png)
+
 A note on expiration dates: GitHub presents you with a few options, including a custom date, and “No expiration”.
 GitHub will warn you about selecting “No expiration”.
 We don’t see it as that much of a problem, given the relatively small number of PATs you’ll need, and the ease of tracking.  Your choice.
 
 Scroll down, and click the green “Create token” button when you are done.
+
+Immediately copy the generated PAT, and paste it somewhere safe.
+You will not be able to recover the PAT from within GitHub after you navigate away from this page.
+Save your collection of PATs, along with any notes you may want to keep, somewhere appropriate for the level of security you need.
+(In case you were wondering, I deleted this particular demonstration PAT as soon as I took the screenshot.)
+
+![Copy the PAT](CopyPAT.png)
 
 ### Credential Formats, and Using the PAT
 
