@@ -77,9 +77,17 @@ Select an expiration date, or “_No expiration_” (5).  For “_Select scopes_
 
 ![Create a PAT](CreatePAT.png)
 
-A note on expiration dates: GitHub presents you with a few options, including a custom date, and “_No expiration_”.
-GitHub will warn you about selecting “_No expiration_”.
-We don’t see it as that much of a problem, given the relatively small number of PATs you’ll need, and the ease of tracking.  Your choice.
+A note on expiration dates: GitHub presents you with options,
+such as 7, 30, 60, or 90 days,
+a custom "date certain",
+and “_No expiration_”.
+GitHub will display a security warning if you select “_No expiration_”.
+We don't think that "_No expiration_" presents much of a problem at the PSA:
+Our team enrollment changes little from year to year, and remains active during the summer.
+We just manually delete or regenerate PATs when students leave a team, or replace their laptops.
+For a school-based team that shuts down at the end of the academic year,
+it might be preferrable to set PATs for students' personally-owned laptops to expire in June.
+Set your own policy, keeping in mind that you will only need a small number of PATs.
 
 Scroll down, and click the green “_Create token_” button when you are done.
 
