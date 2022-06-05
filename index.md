@@ -108,7 +108,8 @@ For team _Xenon_, with a GitHub account xenon-ftc, their Ultimate Goal repositor
 https://github.com/xenon-ftc/Ultimate-Goal.git
 ```
 
-With the sample PAT (above), the credential with authentication token might be:
+You insert the PAT into the URL immediately after `https://`, separating it from the host name (github.com) with an `@` sign.
+For team _Xenon_, the credential with authentication token might be:
 
 ```
 https://ghp_PersonalAccessTokenForAnArbitraryxyz@github.com/xenon-ftc/Ultimate-Goal.git
