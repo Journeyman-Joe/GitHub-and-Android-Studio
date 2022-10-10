@@ -283,8 +283,10 @@ Note that we're changing the name to _PowerPlay_ on the local computer:
 Change directory into the **previous season (FreightFrenzy)** repository folder,
 and display the remote repository (i.e., GitHub) connection:
 
-`cd FreightFrenzy`
-`git remote -v`
+```
+cd FreightFrenzy
+git remote -v
+```
 
 This will display the GitHub repository URL, including the vaild PAT, looking something like this:
 
@@ -295,6 +297,9 @@ origin  https://ghp_PersonalAccessTokenForAnArbitraryxyz@github.com/xenon/Freigh
 
 Highlight (with your mouse) the URL from either line, from `http:` to, but not including, the repository name,
 right-click and "Copy" the selected text to your clipboard.
+This is the part you want:
+
+*https://ghp_PersonalAccessTokenForAnArbitraryxyz@github.com/xenon/*
 
 Next, change directory out of the _FreightFrenzy_ repository, and into the new _PowerPlay_ repository:
 
