@@ -249,3 +249,86 @@ Find the `url` line, and paste in your PAT:
 
 This is obviously a bit of a risk: these files are not meant to be edited by a human.
 But it should work, and may save you the trouble of fixing the upstream branch records if you have lots of branches.
+
+### Step-by-Step Examples
+
+In practice, this is really pretty easy.  I'll provide two sample "Use Cases", from my own practices at the PSA:
+
+### Use Case 1: Initializing a PowerPlay Team Repository
+
+Scenario: A Coach (or veteran team programmer) for team Xenon needs to create a new _PowerPlay_ repository for the season,
+initialize it with FTC SDK 8.0, and add the repository to the existing team GitHub account.
+She is using the same computer she used during the _FreightFrenzy_ season, which still has that repository,
+and a valid Personal Access Token (PAT).
+
+This process is only done once, to create the new team repository.  For additional computers and programmers, use the procedure below
+to clone from the team GitHub account.
+
+For this example, assume that team Xenon has a folder beneath the `android-workspace` folder.
+I'm using Windows terminology, here.  Mac (or Linux) procedures will be nearly identical.
+
+Log in to the team GitHub account, and create a new repository with the name _PowerPlay_.
+(Steps not shown.)
+
+Open a Command Prompt window.
+Change directory into team Xenon's repository folder:
+
+`cd android-workspace\xenon`
+
+Clone a new repository from the _FIRST-Tech-Challenge/FtcRobotController_ repository.
+Note that we're changing the name to _PowerPlay_ on the local computer:
+
+`git clone https://github.com/FIRST-Tech-Challenge/FtcRobotController.git PowerPlay`
+
+Change directory into the **previous season (FreightFrenzy)** repository folder,
+and display the remote repository (i.e., GitHub) connection:
+
+`cd FreightFrenzy`
+`git remote -v`
+
+This will display the GitHub repository URL, including the vaild PAT, looking something like this:
+
+```
+origin  https://ghp_PersonalAccessTokenForAnArbitraryxyz@github.com/xenon/FreightFrenzy.git (fetch)
+origin  https://ghp_PersonalAccessTokenForAnArbitraryxyz@github.com/xenon/FreightFrenzy.git (push)
+```
+
+Highlight (with your mouse) the URL from either line, from `http:` to, but not including, the repository name,
+right-click and "Copy" the selected text to your clipboard.
+
+Next, change directory out of the _FreightFrenzy_ repository, and into the new _PowerPlay_ repository:
+
+```
+cd ..
+cd PowerPlay
+```
+
+Remove the remote repository connection to the FIRST-Tech-Challenge account:
+
+`git remote remove origin`
+
+And start composing a new connection by typing `git remote add origin` typing a space,
+and "Pasting" in the contents of the clipboard.  It should look like this:
+
+`git remote add origin https://ghp_PersonalAccessTokenForAnArbitraryxyz@github.com/xenon/`
+
+Next, type `PowerPlay.git`:
+
+`git remote add origin https://ghp_PersonalAccessTokenForAnArbitraryxyz@github.com/xenon/PowerPlay.git`
+
+And hit "Enter".  No messages mean that there were no errors; that's what we want.
+(The above hand-crafted command creates a new remote repository (GitHub) connection, with the PAT copied from FreightFrenzy,
+but otherwise pointing to the new PowerPlay repository.)
+
+Finally, enter:
+
+`git push -u origin main`
+
+which will set up the default branch, and push the contents of the local repository to the team GitHub account.
+
+### Use Case 2: Cloning an Existing PowerPlay Repository for a Returning Team Programmer
+
+Scenario: A returning programmer for team Xenon needs to clone the _PowerPlay_ repository from the team GitHub account (see above)
+to his personally-owned laptop.
+It's the same laptop he used last year, and still has a good repository for _FreightFrenzy_, with a valid Personal Access Token (PAT).
+
