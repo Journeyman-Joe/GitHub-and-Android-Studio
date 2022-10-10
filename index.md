@@ -299,7 +299,7 @@ Highlight (with your mouse) the URL from either line, from `http:` to, but not i
 right-click and "Copy" the selected text to your clipboard.
 This is the part you want:
 
-*https://ghp_PersonalAccessTokenForAnArbitraryxyz@github.com/xenon/*
+`https://ghp_PersonalAccessTokenForAnArbitraryxyz@github.com/xenon/`
 
 Next, change directory out of the _FreightFrenzy_ repository, and into the new _PowerPlay_ repository:
 
