@@ -312,12 +312,12 @@ Remove the remote repository connection to the FIRST-Tech-Challenge account:
 
 `git remote remove origin`
 
-And start composing a new connection by typing `git remote add origin` typing a space,
+And start composing a new connection by typing `git remote add origin`, typing a space,
 and "Pasting" in the contents of the clipboard.  It should look like this:
 
 `git remote add origin https://ghp_PersonalAccessTokenForAnArbitraryxyz@github.com/xenon/`
 
-Next, type `PowerPlay.git`:
+Next, on the same line, type `PowerPlay.git`:
 
 `git remote add origin https://ghp_PersonalAccessTokenForAnArbitraryxyz@github.com/xenon/PowerPlay.git`
 
@@ -337,3 +337,92 @@ Scenario: A returning programmer for team Xenon needs to clone the _PowerPlay_ r
 to his personally-owned laptop.
 It's the same laptop he used last year, and still has a good repository for _FreightFrenzy_, with a valid Personal Access Token (PAT).
 
+This is easier than the previous Use Case, as the GitHub repository already exists.
+The programmer does not have to log in to GitHub at all:
+Everything gets done with the existing PAT.
+
+Open a Command Prompt window.
+Change directory into the programmer's repository home folder
+(which probably won't include the team name as part of the path):
+
+`cd android-workspace`
+
+Change directory into the **previous season (FreightFrenzy)** repository folder,
+and display the remote repository (i.e., GitHub) connection:
+
+```
+cd FreightFrenzy
+git remote -v
+```
+
+This will display the GitHub repository URL, including the vaild PAT, looking something like this:
+
+```
+origin  https://ghp_PersonalAccessTokenForAnArbitraryxyz@github.com/xenon/FreightFrenzy.git (fetch)
+origin  https://ghp_PersonalAccessTokenForAnArbitraryxyz@github.com/xenon/FreightFrenzy.git (push)
+```
+
+Highlight (with your mouse) the URL from either line, from `http:` to, but not including, the repository name,
+right-click and "Copy" the selected text to your clipboard.
+This is the part you want:
+
+`https://ghp_PersonalAccessTokenForAnArbitraryxyz@github.com/xenon/`
+
+Next, change directory out of the _FreightFrenzy_ repository:
+
+`cd ..`
+
+And start construcing the "clone" command, by typing `git clone`, followed by a space,
+and "Paste" in the URL copied from the old repository, so it looks like this:
+
+`git clone https://ghp_PersonalAccessTokenForAnArbitraryxyz@github.com/xenon/`
+
+Next, add, on the same line, the name of the new GitHub repository:
+
+`git clone https://ghp_PersonalAccessTokenForAnArbitraryxyz@github.com/xenon/PowerPlay.git`
+
+And hit "Enter".
+
+That's it; you'll see some messages as the repository is cloned from GitHub to the local computer.
+You're good to go!
+
+### Use Case 3: Cloning an Existing PowerPlay Repository for a Returning Team Programmer
+
+Scenario: You're setting up shared (classroom) computers with repositories for one or more teams.
+
+For one team, you can use the same procedure as for a team member's personally-owned laptop.
+For several teams, I recommend having subdirectories underneath the Android Studio workspace default location.
+This will let you keep the same repository name across all of your teams,
+which may simplify management.
+
+```
+.\android-workspace\xenon\PowerPlay
+.\android-workspace\radon\PowerPlay
+.\android-workspace\argon\PowerPlay
+```
+There's one more useful step.
+When pusing a commit from Android Studio to GitHub,
+the push includes a record of the user name and user email doing the push.
+
+With shared (classroom) computers, there's no easy way to individualize that information.
+However, you can make each team repository have entries that are team-specific.
+
+A script might look something like this:
+
+```
+cd xenon\PowerPlay
+git config --local user.name="Xenon"
+git config --local user.email="xenon@gmail.com"
+cd ..\..
+cd radon\PowerPlay
+git config --local user.name="Radon"
+git config --local user.email="radon@gmail.com"
+cd ..\..
+cd argon\PowerPlay
+git config --local user.name="Argon"
+git config --local user.email="argon@gmail.com"
+cd ..\..
+```
+
+You should set some default value for `user.name` and `user.email`.
+Leaving them undefined will cause Android Studio to present a confusing pop-up when pushing commits to GitHub, otherwise.
